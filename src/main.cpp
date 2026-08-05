@@ -1,3 +1,7 @@
+#include <csignal>
+#include <atomic>
+static std::atomic<bool> g_running{true};
+static void signal_handler(int) { g_running.store(false); }
 #include <iostream>
 #include <grpcpp/grpcpp.h>
 #include <iris_flow.grpc.pb.h>
@@ -44,6 +48,9 @@ int main() {
     builder.RegisterService(&service);
     auto server = builder.BuildAndStart();
     std::cout << "Iris Flow Server listening on " << addr << "\n";
-    server->Wait();
+    while (g_running.load()) { std::this_thread::sleep_for(std::chrono::milliseconds(100)); }
+    std::cout << "Shutting down...\n";
+    server->Shutdown();
+    std::cout << "Done.\n";
     return 0;
 }
