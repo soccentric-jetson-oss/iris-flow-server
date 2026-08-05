@@ -12,6 +12,62 @@ The Iris Flow Server is a C++17 gRPC service that exposes the Jetson AGX Orin's 
 - for
 - camera
 - control
+- Camera
+- status
+- and
+- health
+- monitoring
+- Stream
+- start/stop
+- with
+- configurable
+- resolution
+- Frame
+- capture
+- with
+- metadata
+- ISP
+- parameter
+- tuning
+- (brightness,
+- contrast,
+- saturation)
+- Real-time
+- frame
+- streaming
+- Input
+- validation
+- with
+- bounds
+- checking
+- Health
+- check
+- endpoint
+- C++17
+- with
+- strict
+- compiler
+- warnings
+- CMake
+- +
+- Ninja
+- build
+- system
+- Catch2
+- unit
+- tests
+- Configurable
+- listen
+- address
+- and
+- port
+- Default
+- bind
+- to
+- localhost
+- (security)
+- MIT
+- licensed
 
 ## Quick Start
 
@@ -24,16 +80,6 @@ The Iris Flow Server is a C++17 gRPC service that exposes the Jetson AGX Orin's 
 make all      # Build all targets
 make test     # Run tests
 make clean    # Clean build artifacts
-```
-
-## Architecture
-
-```
-Driver (kernel module) ──► Server (gRPC) ──► GUI (PySide6)
-     │                        │                    │
-     ▼                        ▼                    ▼
-  Hardware              C++ Service           Desktop App
-  Access                Layer                 (macOS/Linux/Win)
 ```
 
 ## Repository Structure
@@ -51,10 +97,10 @@ Driver (kernel module) ──► Server (gRPC) ──► GUI (PySide6)
 ## Project Status
 
 **Version:** 0.1.0 — Initial release
-**License:** Camera status and health monitoring
+**License:** MIT
 **Audit Score:** 90/100
 
-## 🌐 Ecosystem
+## Ecosystem
 
 This project is part of the [Jetson AGX Orin Capability Showcase](https://github.com/soccentric-jetson-oss/soccentric-jetson-oss) — five open-source projects demonstrating full exploitation of NVIDIA's flagship edge AI platform.
 
@@ -64,4 +110,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. All contributions welcome
 
 ## License
 
-Camera status and health monitoring. See [LICENSE](LICENSE) for details.
+MIT. See [LICENSE](LICENSE) for details.
