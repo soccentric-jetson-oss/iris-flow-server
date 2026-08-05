@@ -1,0 +1,22 @@
+Start testing: Aug 05 14:47 PDT
+----------------------------------------------------------
+1/1 Testing: iris-flow-server-test
+1/1 Test: iris-flow-server-test
+Command: "/home/sandesh/jetson/build/iris-flow-server/build/iris-flow-server-test"
+Directory: /home/sandesh/jetson/build/iris-flow-server/build
+"iris-flow-server-test" start time: Aug 05 14:47 PDT
+Output:
+----------------------------------------------------------
+Randomness seeded to: 3004114917
+===============================================================================
+All tests passed (4 assertions in 2 test cases)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"iris-flow-server-test" end time: Aug 05 14:47 PDT
+"iris-flow-server-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 05 14:47 PDT

@@ -1,0 +1,26 @@
+syntax = "proto3";
+package irisflow;
+
+service IrisFlow {
+    rpc GetStatus(StatusRequest) returns (StatusResponse);
+    rpc StartStream(StreamConfig) returns (StreamResponse);
+    rpc StopStream(StreamRequest) returns (StreamResponse);
+    rpc GetFrame(FrameRequest) returns (FrameResponse);
+    rpc SetIsp(IspConfig) returns (IspResponse);
+    rpc GetIsp(IspRequest) returns (IspConfig);
+    rpc StreamFrames(FrameRequest) returns (stream FrameResponse);
+    rpc HealthCheck(HealthRequest) returns (HealthResponse);
+}
+
+message StatusRequest {}
+message StatusResponse { uint32 state = 1; uint32 fps = 2; string sensor = 3; }
+message StreamConfig { uint32 width = 1; uint32 height = 2; uint32 format = 3; uint32 fps = 4; }
+message StreamRequest {}
+message StreamResponse { bool success = 1; string error = 2; }
+message FrameRequest { uint32 count = 1; }
+message FrameResponse { uint32 frame_id = 1; uint32 width = 2; uint32 height = 3; bytes data = 4; uint64 timestamp_ns = 5; }
+message IspConfig { int32 brightness = 1; int32 contrast = 2; int32 saturation = 3; int32 sharpness = 4; }
+message IspRequest {}
+message IspResponse { bool success = 1; }
+message HealthRequest {}
+message HealthResponse { string status = 1; string version = 2; }
