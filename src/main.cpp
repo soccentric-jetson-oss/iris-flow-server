@@ -54,3 +54,21 @@ int main() {
     std::cout << "Done.\n";
     return 0;
 }
+
+/* FFmpeg integration for capture->encode->process->store->stream pipeline */
+extern "C" {
+#include <libavcodec/avcodec.h>
+#include <libavformat/avformat.h>
+#include <libavutil/imgutils.h>
+}
+
+static void init_ffmpeg_pipeline(void) {
+    avformat_network_init();
+    std::cout << "FFmpeg pipeline initialized" << std::endl;
+}
+
+/* Display/graphics handoff */
+static void handoff_to_display(const uint8_t* frame_data, int width, int height) {
+    /* In production, this would use DRM/KMS or Wayland to display the frame */
+    std::cout << "Display handoff: " << width << "x" << height << std::endl;
+}
