@@ -25,7 +25,7 @@ add_library(iris_flow_proto OBJECT ${PROTO_GEN_DIR}/iris_flow.pb.cc ${PROTO_GEN_
 target_include_directories(iris_flow_proto PUBLIC ${PROTO_GEN_DIR})
 target_link_libraries(iris_flow_proto PUBLIC protobuf::libprotobuf gRPC::grpc++)
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    target_compile_options(iris_flow_proto PRIVATE -Wno-sign-conversion)
+    target_compile_options(iris_flow_proto PRIVATE -Wno-sign-conversion -Wno-conversion)
 endif()
 
 add_library(iris_flow_core STATIC

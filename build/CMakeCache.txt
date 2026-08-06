@@ -15,7 +15,7 @@
 ########################
 
 //Build tests
-BUILD_TESTS:BOOL=ON
+BUILD_TESTS:BOOL=OFF
 
 //Read docs/configuration.md for details
 CATCH_CONFIG_ANDROID_LOGWRITE:BOOL=OFF
@@ -177,6 +177,9 @@ CATCH_INSTALL_DOCS:BOOL=ON
 
 //Install extras (CMake scripts, debugger helpers) alongside library
 CATCH_INSTALL_EXTRAS:BOOL=ON
+
+//Path to a program.
+CLANG_FORMAT:FILEPATH=/usr/bin/clang-format
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -413,6 +416,9 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a program.
+CPPCHECK:FILEPATH=/usr/bin/cppcheck
+
 //Dependencies for the target
 Catch2WithMain_LIB_DEPENDS:STATIC=general;Catch2;
 
@@ -424,6 +430,12 @@ Catch2_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 Catch2_SOURCE_DIR:STATIC=/home/sandesh/jetson/build/iris-flow-server/build/_deps/catch2-src
+
+//Dot tool for use with Doxygen
+DOXYGEN_DOT_EXECUTABLE:FILEPATH=DOXYGEN_DOT_EXECUTABLE-NOTFOUND
+
+//Doxygen documentation generation tool (https://www.doxygen.nl)
+DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
 
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/home/sandesh/jetson/build/iris-flow-server/build/_deps
@@ -647,7 +659,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -696,6 +708,12 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 Catch2WithMain_GUID_CMAKE:INTERNAL=8bd3552a-2cfb-4a59-ab15-2031b97ada1e
 //Project GUID
 Catch2_GUID_CMAKE:INTERNAL=8d538cbe-01bf-4a2e-a98a-6c368fdf13d7
+//ADVANCED property for variable: DOXYGEN_DOT_EXECUTABLE
+DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DOXYGEN_EXECUTABLE
+DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
+//Details about finding Doxygen
+FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/bin/doxygen][cfound components: doxygen missing components: dot][v1.9.8()]
 //Details about finding OpenSSL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcrypto.so][/usr/include][c ][v3.0.13()]
 //Details about finding PkgConfig

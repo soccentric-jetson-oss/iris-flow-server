@@ -101,7 +101,7 @@ grpc::Status IrisFlowServiceImpl::StreamFrames(
             break;
 
         FrameResponse response;
-        response.set_frame_id(++frame_count_);
+        response.set_frame_id(static_cast<uint32_t>(++frame_count_));
         response.set_width(1920);
         response.set_height(1080);
         response.set_data("stream_frame_data", 17);
